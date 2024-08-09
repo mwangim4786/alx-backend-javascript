@@ -41,6 +41,9 @@ export default class HolbertonCourse {
     if (!Array.isArray(value)) {
       throw new Error('Invalid input type');
     }
+    value.forEach((student) => {
+      if (typeof student !== 'string') throw TypeError('student must be a String');
+    });
     this._students = value;
   }
 
