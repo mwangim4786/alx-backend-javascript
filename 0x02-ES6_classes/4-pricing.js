@@ -15,15 +15,15 @@ export default class Pricing {
   }
 
   set currency(value) {
-    if (typeof value !== 'string') {
-      throw new Error('Invalid input type');
+    if (!(value instanceof Currency)) {
+      throw new Error('currency must be a currency');
     }
     this._currency = value;
   }
 
   set amount(value) {
-    if (typeof value !== 'string') {
-      throw new Error('Invalid input type');
+    if (typeof value !== 'number') {
+      throw new Error('amount must be a number');
     }
     this._amount = value;
   }
